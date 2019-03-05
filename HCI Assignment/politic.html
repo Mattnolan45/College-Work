@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Daily Mail Now</title>
+    </head>
+	<body>
+		<header>
+			<h1><a href="index.html">Daily Mail</a><span id="header"></span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html" >Home</a></li>
+					<li><a href="sport.html" >Sports</a></li>
+					<li><a href="politic.html" class="current">Politics</a></li>
+					<li><a href="science.html">Science</a></li>
+					<li><a href="enter.html">Entertainment</a></li>
+				</ul>
+			</nav>
+			<div class="dtime">
+			
+			<h3 id="today"></h3>
+
+			<script>
+
+				var time = new Date();
+				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				document.getElementById("today").innerHTML = days[time.getDay()]+"  "+time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear();
+
+			</script>
+
+		</div>
+		</header>
+
+		</div>
+
+
+		<div id="secwrapper">
+		<center>
+		<a href="index.html"><img src="images/logo.jpg"  width="380" height="150" alt="daily mail logo"/></a>
+		</center>
+			<h1 style="text-align:center;padding-bottom: 5px;">Political News</h1>
+			<div id="sponsors">
+				<h1>Sponsors</h1>
+					<a href="#"><p>Advertise here</p></a><a href="#"><p>Advertise here</p></a><a href="#"><p>Advertise here</p></a>
+			</div>
+			
+			<div id="photobox">
+					<h1 style="text-align: center;">Photos Box</h1>
+					<img src="images/a.jpg" width="80" height="80" alt="" /><img src="images/b.jpg" width="80" height="80" alt="" /><img src="images/c.jpg" width="80" height="80" alt="" />
+					<img src="images/d.jpg" width="80" height="80" alt="" /><img src="images/e.jpg" width="80" height="80" alt="" /><img src="images/f.jpg" width="80" height="80" alt="" />
+					
+			</div>
+
+			<section>
+				<article id="featured">
+					<a href="#"><img src="images/theresa.jpg" width="280" height="150" alt="Theresa May"/></a>
+					<img src="images/featured.png" width="20" height="10" alt="" id="featuredico"/>
+					<h1>Brexit Talk reach stalemate</h1>
+					<p>On 26 July 2016, just over one month after the Brexit Referendum, Enda Kenny had lunch with British Prime Minister Theresa May in Downing Street.  Afterwards, the former taoiseach said: "We are both agreed very firmly there will be no return to a hard border as existed."</p>
+					<a href="brexitart.html" class="readmore">Read more</a>
+				</article>
+				<article>
+					<a href="#"><img src="images/donald_trump.jpg" width="280" height="150" alt="Trump and wife"/></a>
+					<h1>Donald and Melania get into the Christmas spirit</h1>
+					<p> With Thanksgiving behind us, the White House has transformed into a beautifully-decorated backdrop for holiday parties hosted by President Donald Trump and First Lady Melania. The White House Christmas Reception welcomed a group of people into a fully-decorated home</p>
+					<a href="trump.html" class="readmore">Read more</a>
+				</article>
+				<article class="rightcl">
+					<a href="#"><img src="images/leo.jpg" width="280" height="150" alt="Leo Varadkar"/></a>
+					<h1>Homelessness cannot be completely eradicated - Taoiseach</h1>
+					<p>Taoiseach Leo Varadkar has said homelessness is one of the issues that keeps him awake at night. Speaking on RTÉ's Late Late Show, Mr Varadkar said it was particularly troubling that so many children were being forced to live in temporary accommodation.</p>
+					<a href="leo.html" class="readmore">Read more</a>
+				</article>			
+
+				<article>
+					<a href="#"><img src="images/book.jpg" alt="politcal books"/></a>
+					<h1>Top Political Books of 2018</h1>
+					<p>One of the world’s most influential political theorists takes on one of the most urgent themes in contemporary politics. In characteristic style, Fukuyama ranges well beyond Donald Trump and Brexit to look at other contemporary political phenomena — such as the Arab Spring and Chinese nationalism. </p>
+					<a href="#" class="readmore">Read more</a>
+				</article>
+
+				<article>
+					<a href="#"><img src="images/india.jpg" alt="indian president"/></a>
+					<h1>Distress over Inida president</h1>
+					<p> Amid the apparent rift within the National Democratic Alliance (NDA) over seat sharing in Bihar for Lok Sabha elections 2019, the constituents of the Magathbandhan are slated to meet in the national capital on Thursday. The meeting, which will be attended by the representatives of the Congress party and the Rashtriya.</p>
+					<a href="#" class="readmore">Read more</a>
+				</article>
+
+				<article>
+					<a href="#"><img src="images/france.jpg" alt="french presidential candidate"/></a>
+					<h1>French Presidentail Elections</h1>
+					<p> Voters in France went to the polls on Sunday in the first round of the presidential election. The top two candidates, independent Emmanuel Macron and far-right Marine Le Pen, go into a runoff in a fortnight. Find out where each drew most support and what happens next in this article today...</p>
+					<a href="#" class="readmore">Read more</a>
+				</article>
+			</section>
+		</div>
+		<footer>
+			<p>Contact us.</p>
+		</footer>
+	</body>
+</html>

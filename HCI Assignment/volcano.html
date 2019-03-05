@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Daily Mail Now</title>
+    </head>
+
+	<body>
+		<header>
+			<h1><a href="index.html">Daily Mail</a><span id="header"></span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html" >Home</a></li>
+					<li><a href="sport.html"class="current">Sports</a></li>
+					<li><a href="politic.html">Politics</a></li>
+					<li><a href="science.html">Science</a></li>
+					<li><a href="enter.html">Entertainment</a></li>
+				</ul>
+			</nav>
+			<div class="dtime">
+			
+			<h3 id="today"></h3>
+
+			<script>
+
+				var time = new Date();
+				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				document.getElementById("today").innerHTML = days[time.getDay()]+"  "+time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear();
+
+			</script>
+
+		</div>
+		</header>
+
+
+
+		<div>
+			<center>
+			<h1 class = "artheading">Artificial intelligence helps predict volcanic eruptions</h1>
+			</center>
+
+
+			<img src="images/vol.jpg" width="600" height="330" style = "padding: 10px;"class="centre" alt="Pogba in conversation with Mourinho"/>
+	
+			<p class = "artpara">Satellites are providing torrents of data about the world’s active volcanoes, but researchers have struggled to turn them into a global prediction of volcanic risks. That may soon change with newly developed algorithms that can automatically tease from that data signals of volcanic risk, raising the prospect that within a couple years scientists could develop a global volcano warning system. Without such tools, geoscientists simply can’t keep up with information pouring out the satellites, says Michael Poland, the scientist-in-charge of the U.S. Geological Survey’s Yellowstone Volcano Observatory in Vancouver, Washington, who was not involved in either study. “The volume of data is overwhelming,” he says.
+			</p> 
+			<p class = "artpara">
+			Andrew Hooper, a volcanologist at the University of Leeds in the United Kingdom who led the development of one method, says the new algorithms should benefit the roughly 800 million people who live near volcanoes. “About 1400 volcanoes have potential to erupt above the sea,” he says. “About 100 are monitored. The vast majority aren’t.” Both methods were presented this week in Washington, D.C., at the semiannual meeting of the American Geophysical Union (AGU).
+			</p>
+			<p class = "artpara">
+			Over the past few years, with the launch of the European Space Agency’s satellites Sentinel 1A and Sentinel 1B, the field of volcanology has received frequent, repeated views of how the ground shifts around the world’s volcanoes. The Sentinel 1 satellites use a technique called radar interferometry, which compares radar signals sent to and reflected from Earth to track changes in the planet’s surface. The method isn’t new, but, uniquely, the Sentinel 1 satellites revisit each spot on the planet once every 6 days, and the Sentinel team releases those high-resolution observations rapidly. A research group in the United Kingdom called the Centre for Observation and Modelling of Earthquakes, Volcanoes and Tectonics (COMET) had already begun to create a database of these ground-movement snapshots, called interferograms, for the world’s volcanoes. Overlaying this database with automated detection seemed natural given the success machine learning has had in other forms of pattern detection, says Hooper, who works with COMET. Changes in ground motion typically reflect magma shifting beneath the volcano and do not perfectly predict eruptions. But unlike thermal hot spots or ash plumes, which can be automatically detected with weather satellites, land shifts can help predict eruptions, not simply indicate their occurrence. “Deformation doesn’t always mean eruption,” Hooper says. “But there are few cases where we don’t have an eruption without deformation.”
+			</p>
+		</div>
+				
+
+

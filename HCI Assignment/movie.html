@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Daily Mail Now</title>
+    </head>
+
+	<body>
+		<header>
+			<h1><a href="index.html">Daily Mail</a><span id="header"></span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html" >Home</a></li>
+					<li><a href="sport.html">Sports</a></li>
+					<li><a href="politic.html">Politics</a></li>
+					<li><a href="science.html">Science</a></li>
+					<li><a href="enter.html"class="current">Entertainment</a></li>
+				</ul>
+			</nav>
+			<div class="dtime">
+			
+			<h3 id="today"></h3>
+
+			<script>
+
+				var time = new Date();
+				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				document.getElementById("today").innerHTML = days[time.getDay()]+"  "+time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear();
+
+			</script>
+
+		</div>
+		</header>
+
+
+
+		<div>
+			<center>
+			<h1 class = "artheading">The best Netflix original movies of 2018</h1>
+			</center>
+
+
+			<img src="images/netflix.jpg" width="600" height="330" style = "padding: 10px;"class="centre" alt="Netflix logo"/>
+	
+			<p class = "artpara">Been So Long, Based on the musical of the same name, Tinge Krishnan’s Been So Long is a modern day romance that follows a single mother who falls in love with a handsome stranger during a rare night out on the town with friends. Featuring a dazzling performance from Michaela Coel (Chewing Gum, Black Mirror), the actress received a Most Promising Newcomer nomination at the British Independent Film Awards.
+			</p> 
+			<p class = "artpara">
+			Catching Feelings, Nominated for the World Fiction Award at the Los Angeles Film Festival, Kagiso Lediga’s Catching Feelings is a dark romantic comedy centring on a married couple whose lives are turned upside down when a hedonistic older writer moves into their home. Decider’s own Joe Reid gave the film a “stream it” recommendation, praising the film’s dialogue and calling it a “light little escape from a fresh comedic voice.”
+
+
+			</p>
+			<p class = "artpara">
+				City of Joy, Not to be confused with the 1992 Patrick Swayze film of the same name, Madeleine Gavin’s powerful documentary is not to be missed. Per Netflix, the film follows women who’ve been sexually brutalised in war-torn Congo who begin to heal at City of Joy, a centre that helps them regain a sense of self and empowerment.
+			</p>
+			<p class = "artpara">
+			Mercury 13, David Sington and Heather Walsh’s absorbing Mercury 13 tells the remarkable story of the women who were tested for spaceflight in the early 1960s but had their dreams crushed when only men were selected to become astronauts.
+			</p>
+		</div>
+				
+
+

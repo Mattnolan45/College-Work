@@ -1,0 +1,5 @@
+age=4
+ if age <=18 or age >= 75:
+    print "you may climb everest"
+ else:
+    print "you may not climb everest"

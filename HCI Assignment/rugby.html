@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Daily Mail Now</title>
+    </head>
+
+	<body>
+		<header>
+			<h1><a href="index.html">Daily Mail</a><span id="header"></span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html" >Home</a></li>
+					<li><a href="sport.html"class="current">Sports</a></li>
+					<li><a href="politic.html">Politics</a></li>
+					<li><a href="science.html">Science</a></li>
+					<li><a href="enter.html">Entertainment</a></li>
+				</ul>
+			</nav>
+			<div class="dtime">
+			
+			<h3 id="today"></h3>
+
+			<script>
+
+				var time = new Date();
+				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				document.getElementById("today").innerHTML = days[time.getDay()]+"  "+time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear();
+
+			</script>
+
+		</div>
+		</header>
+
+
+
+		<div>
+			<center>
+			<h1 class = "artheading">Ireland overtake New Zealand to be top dogs</h1>
+			</center>
+
+
+			<img src="images/rugby.jpg" width="600" height="330" style = "padding: 10px;"class="centre" alt="Pogba in conversation with Mourinho"/>
+	
+			<p class = "artpara">Steve Hansen knew what he was doing when anointing Ireland as the world No 1 side, even if the official rankings have not done so, saying: “It’s their turn at the moment so we’ll see how they cope with that.” So far they are not doing a bad job, wasting no time in announcing that Andy Farrell will replace Joe Schmidt after next year’s World Cup, where a first ever last-four berth is the least they will be expecting. A second victory over the All Blacks in three matches was a tactical masterclass, served up by Schmidt and Farrell and carried out by their players with relentless intensity. And all without Conor Murray. They are favourites to defend the Six Nations title and, as both Hansen and Eddie Jones have said recently, they have the ideal domestic set-up for international success.
+			</p> 
+			<p class = "artpara">
+			Far too early to say they are in decline, but four defeats in the past 18 months demonstrates they have slipped off their perch. With no matches until next summer the next six months will prove defining for Steve Hansen and his coaching staff. Tweaks rather than wholesale changes are required, but there can be no question that player migration to the northern hemisphere is hurting them. Now may be the time to accept that Beauden Barrett, for all his attacking talents, is a fullback playing out of position and that New Zealand need a fly-half in the mould of Johnny Sexton or Owen Farrell, capable of steering them through tight matches. Kieran Read will benefit from a long rest, for he was part of a back-row that looked sub-par this autumn, all the more so without Sam Cane. They are still the team to beat, but Ireland and South Africa have shown how that can be done.
+			</p>
+			
+			
+		</div>
+				
+
+

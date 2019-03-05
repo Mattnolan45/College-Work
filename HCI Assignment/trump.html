@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Daily Mail Now</title>
+    </head>
+
+	<body>
+		<header>
+			<h1><a href="index.html">Daily Mail</a><span id="header"></span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html" >Home</a></li>
+					<li><a href="sport.html"class="current">Sports</a></li>
+					<li><a href="politic.html">Politics</a></li>
+					<li><a href="science.html">Science</a></li>
+					<li><a href="enter.html">Entertainment</a></li>
+				</ul>
+			</nav>
+			<div class="dtime">
+			
+			<h3 id="today"></h3>
+
+			<script>
+
+				var time = new Date();
+				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				document.getElementById("today").innerHTML = days[time.getDay()]+"  "+time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear();
+
+			</script>
+
+		</div>
+		</header>
+
+
+
+		<div>
+			<img src="images/donald_trump.jpg" width="580" height="380" class="centre" alt="Trump with Melania in front of decorations"/>
+			<center>
+			<h1 class = "artheading">Donald and Melania get into the Christmas spirit</h1>
+			</center>
+			<p class = "artpara">With Thanksgiving behind us, the White House has transformed into a beautifully-decorated backdrop for holiday parties hosted by President Donald Trump and First Lady Melania. The White House Christmas Reception welcomed a group of people into a fully-decorated home, with a special appearance by an orchestra, on Tuesday. The First Family welcomed attendees from behind a podium, over a microphone. Melania told the guests: 'I just want to wish [you] Merry Christmas, and a happy, prosperous and peaceful New Year, and enjoy the White House.'  
+			</p> 
+			<p class = "artpara">
+			Trump addressed the guests first, with part of his remarks captured on social media pages by those lucky enough to attend the soiree.'On behalf of the White House, on behalf of the president, I just want to say congratulations and your entire staff and many of whom are right in the audience right now, really that's a job well...' Trump said, at which point his comments cut off in the recording. At least one of the guests, whose Instagram account has his name listed as Johnney Zhang, is employed at Primior, a company which calls itself 'one of the fastest growing real estate investments firms in California.' The Trumps stood together, waving and smiling at the many camera phones capturing them from a slight distance inside 1600 Pennsylvania Avenue in Washington, DC. Over their heads hung a stunning crystal chandelier, which looked perfectly in place among the luxurious holiday decorations.
+			</p>
+			
+			
+		</div>
+				
+
+

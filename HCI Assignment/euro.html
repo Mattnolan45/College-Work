@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Daily Mail Now</title>
+    </head>
+
+	<body>
+		<header>
+			<h1><a href="index.html">Daily Mail</a><span id="header"></span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html" >Home</a></li>
+					<li><a href="sport.html"class="current">Sports</a></li>
+					<li><a href="politic.html">Politics</a></li>
+					<li><a href="science.html">Science</a></li>
+					<li><a href="enter.html">Entertainment</a></li>
+				</ul>
+			</nav>
+			<div class="dtime">
+			
+			<h3 id="today"></h3>
+
+			<script>
+
+				var time = new Date();
+				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				document.getElementById("today").innerHTML = days[time.getDay()]+"  "+time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear();
+
+			</script>
+
+		</div>
+		</header>
+
+
+
+		<div>
+			<img src="images/euro.jpg" width="600" height="330" class="centre" alt="Trump with Melania in front of decorations"/>
+			<center>
+			<h1 class = "artheading">UEFA EURO 2020 qualifying draw</h1>
+			</center>
+			<p class = "artpara">Gareth Southgate's England were handed a straightforward path to the 2020 European Championship at Sunday's qualification draw in Dublin. England will play Czech Republic, Bulgaria, Montenegro and new opponents Kosovo in Group A with the top two progressing to the finals that will be played across 12 host cities. Gareth Southgate's side also have an alternative route to Euro 2020 should they need it, having reached next summer's inaugural Nations League finals along with Holland, Portugal and Switzerland. Republic of Ireland can also have reason to be pleased with their draw, joining Switzerland, Denmark, Georgia and Gibraltar in Group C. There were audible cheers in the Dublin venue when Ireland were moved from Group B - which contains Germany and Holland - because of rules restricting the number of tournament host cities in any one group.   
+			</p> 
+			<p class = "artpara">
+			"Homelessness for families will be temporary and that they won't be there forever". On the question of the Health Service Executive, the Taoiseach said people in the organisation were working extremely hard but the HSE is not working. Asked if the HSE is fit for purpose, Mr Varadkar said: "Not as the organisation that it is now and we have a plan to change that. "It's called Sláinte Care and it sets out a ten year vision that every party in the Dáil has for a health service, and the big structural changes to kind of slim down the HSE and to have a lot more autonomy - a lot more decision making at local level."
+			</p>
+			
+			
+		</div>
+				
+
+

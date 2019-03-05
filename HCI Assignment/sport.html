@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Daily Mail Now</title>
+    </head>
+	<body>
+		<header>
+			<h1><a href="index.html">Daily Mail</a><span id="header"></span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="sport.html"class="current">Sports</a></li>
+					<li><a href="politic.html">Politics</a></li>
+					<li><a href="science.html">Science</a></li>
+					<li><a href="enter.html">Entertainment</a></li>
+				</ul>
+			</nav>
+
+			<div class="dtime">
+			
+			<h3 id="today"></h3>
+
+			<script>
+
+				var time = new Date();
+				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				document.getElementById("today").innerHTML = days[time.getDay()]+"  "+time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear();
+
+			</script>
+
+		</div>
+
+		</header>
+
+
+		<div id="secwrapper">
+		<center>
+		<a href="index.html"><img src="images/logo.jpg"  width="380" height="150" alt="daily mail logo"/></a>
+		</center>
+			<h1 style="text-align:center;padding-bottom: 17px;">Sports News</h1>
+			<div id="sponsors">
+				<h1>Sponsors</h1>
+					<a href="#"><p>Advertise here</p></a><a href="#"><p>Advertise here</p></a><a href="#"><p>Advertise here</p></a>
+			</div>
+			
+			<div id="photobox">
+					<h1 style="text-align: center;">Photos Box</h1>
+					<img src="images/a.jpg" width="80" height="80" alt="" /><img src="images/b.jpg" width="80" height="80" alt="" /><img src="images/c.jpg" width="80" height="80" alt="" />
+					<img src="images/d.jpg" width="80" height="80" alt="" /><img src="images/e.jpg" width="80" height="80" alt="" /><img src="images/f.jpg" width="80" height="80" alt="" />
+					
+			</div>
+			
+			<section>
+
+				<article id="featured">
+					<a href="#"><img src="images/euro.jpg" width="280" height="150" alt="euro draws"/></a>
+					<img src="images/featured.png" width="20" height="10" alt="" id="featuredico"/>
+					<h1>EURO 2020 qualifying draw</h1>
+					<p>Gareth Southgate's England were handed a straightforward path to the 2020 European Championship at Sunday's qualification draw in Dublin. England will play Czech Republic, Bulgaria, Montenegro and new opponents Kosovo in Group A with the top two progressing to the finals that will be played across 12 host cities."</p>
+					<a href="euro.html" class="readmore">Read more</a>
+				</article>
+
+				<article>
+					<a href="#"><img src="images/1.jpg" width="280" height="150" alt="Pogba feud" /></a>
+					<h1>Mourihno Pogba Feud Ends</h1>
+					<p> MANCHESTER UNITED boss Jose Mourinho has denied there was ever a rift between him and £89million man Paul Pogba. Rumours have swirled all season that Mourinho and his maverick French midfielder have had a series of bust-ups. But Mourinho has described Pogba as "polite" and hit out at "lies in journalism".</p>
+					<a href="pogba.html" class="readmore">Read more</a>
+				</article>
+				<article class="rightcl">
+					<a href="#"><img src="images/rugby.jpg" width="280" height="150" alt="irish team" /></a>
+					<h1>Ireland overtake New Zealand</h1>
+					<p>Steve Hansen knew what he was doing when anointing Ireland as the world No 1 side, even if the official rankings have not done so, saying: “It’s their turn at the moment so we’ll see how they cope with that.” So far they are not doing a bad job. A second victory over the All Blacks in three matches was a tactical masterclass </p>
+					<a href="rugby.html" class="readmore">Read more</a>
+				</article>			
+	
+				<article>
+					<a href="#"><img src="images/tennis.jpg" width="280" height="150" alt="tennis match"/></a>
+					<h1>Tennis: US Open Results</h1>
+					<p>The top-seeded Nadal beat Dominic Thiem in their quarterfinal meeting on Tuesday night, narrowly avoiding a stunning upset at the hands of the Austrian in what was a thrilling match. Ultimately, Nadal was able to finish off Thiem in the early hours of Wednesday morning, punching his ticket to the final four</p>
+					<a href="#" class="readmore">Read more</a>
+				</article>
+
+				<article>
+					<a href="#"><img src="images/golf.jpg" width="280" height="150" alt="ryder cup trophy"/></a>
+					<h1>Ireland eyes Ryder Cup 2026 bid</h1>
+					<p>Ireland is in active discussions to host the 2026 Ryder Cup with Taoiseach Leo Varadkar recently meeting with European Tour chiefs to discuss the deal. Sports Minister Shane Ross travelled to meet with CEO Keith Pelley to discuss taking the 2026 event to Ireland.</p>
+					<a href="#" class="readmore">Read more</a>
+				</article>
+
+				<article class="rightcl">
+					<a href="#"><img src="images/conor.jpg" width="280" height="150" alt="conor mcgregor outside of court"/></a>
+					<h1>Conor McGregor gets six-month driving ban for speeding</h1>
+					<p>FC fighter Conor McGregor has been disqualified from driving for six months and fined €1,000 after admitting driving at 154km/h in a 100km/h zone. He was stopped by gardaí in Co Kildare in October last year while travelling at about 1½ times the speed limit.</p>
+					<a href="#" class="readmore">Read more</a>
+				</article>
+
+				
+
+			</section>
+
+		</div>
+				
+
+		<footer>
+			<a href="#">Contact us</a>
+		</footer>
+	</body>
+</html>

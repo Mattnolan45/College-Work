@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Daily Mail Now</title>
+    </head>
+
+	<body>
+		<header>
+			<h1><a href="index.html">Daily Mail</a><span id="header"></span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html" >Home</a></li>
+					<li><a href="sport.html">Sports</a></li>
+					<li><a href="politic.html">Politics</a></li>
+					<li><a href="science.html">Science</a></li>
+					<li><a href="enter.html"class="current">Entertainment</a></li>
+				</ul>
+			</nav>
+			<div class="dtime">
+			
+			<h3 id="today"></h3>
+
+			<script>
+
+				var time = new Date();
+				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				document.getElementById("today").innerHTML = days[time.getDay()]+"  "+time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear();
+
+			</script>
+
+		</div>
+		</header>
+
+
+
+		<div>
+			<center>
+			<h1 class = "artheading">I’m A Celebrity launch episode breaks ratings record</h1>
+			</center>
+
+
+			<img src="images/celeb.jpg" width="600" height="330" style = "padding: 10px;"class="centre" alt="I'm a celebrity logo"/>
+	
+			<p class = "artpara">The first episode of the new series of I’m A Celebrity… Get Me Out Of Here! – starring new presenter Holly Willoughby – has become the most-watched launch episode in the show’s history. ITV said the episode has been watched by 13.7 million viewers over the past seven days, according to consolidated data. The overall number has grown from the original overnight ratings, which showed that 11 million people tuned in for the first episode.
+
+
+			</p> 
+			<p class = "artpara">
+			The broadcast, which aired on November 18 and saw Willoughby make her debut as Ant McPartlin’s replacement alongside Declan Donnelly, grew by one million viewers in the consolidated data compared to the equivalent episode in 2017. Consolidated ratings include those who have recorded the broadcast and watch up to seven days later. ITV also said that an additional 479,000 viewers watched the programme on its online video on demand service the ITV Hub, bringing its total audience to 14.2 million. The 2018 launch is the second most-watched episode in the show’s history, and is only behind the finale of the 2004 series, which saw Kerry Katona crowned the Queen of the Jungle. That episode was watched by a total of 14.7 million viewers.
+			</p>
+
+		</div>
+				
+
+

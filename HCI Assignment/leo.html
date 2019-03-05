@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Daily Mail Now</title>
+    </head>
+
+	<body>
+		<header>
+			<h1><a href="index.html">Daily Mail</a><span id="header"></span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html" >Home</a></li>
+					<li><a href="sport.html"class="current">Sports</a></li>
+					<li><a href="politic.html">Politics</a></li>
+					<li><a href="science.html">Science</a></li>
+					<li><a href="enter.html">Entertainment</a></li>
+				</ul>
+			</nav>
+			<div class="dtime">
+			
+			<h3 id="today"></h3>
+
+			<script>
+
+				var time = new Date();
+				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				document.getElementById("today").innerHTML = days[time.getDay()]+"  "+time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear();
+
+			</script>
+
+		</div>
+		</header>
+
+
+
+		<div>
+			<img src="images/leo.jpg" width="600" height="330" class="centre" alt="Trump with Melania in front of decorations"/>
+			<center>
+			<h1 class = "artheading">Homelessness cannot be completely eradicated - Taoiseach</h1>
+			</center>
+			<p class = "artpara">Taoiseach Leo Varadkar has said homelessness is one of the issues that keeps him awake at night. Speaking on RTÉ's Late Late Show, Mr Varadkar said it was particularly troubling that so many children were being forced to live in temporary accommodation. He said it was impossible to promise that homelessness could be completely eradicated in the future, but those living in hotels and bed and breakfasts could look forward to a better future. Mr Varadkar was asked to address people living in emergency accommodation and he said he was sorry that they are in the situation, and the Government is going to do, and is doing, everything it can to resolve the problem.  
+			</p> 
+			<p class = "artpara">
+			"Homelessness for families will be temporary and that they won't be there forever". On the question of the Health Service Executive, the Taoiseach said people in the organisation were working extremely hard but the HSE is not working. Asked if the HSE is fit for purpose, Mr Varadkar said: "Not as the organisation that it is now and we have a plan to change that. "It's called Sláinte Care and it sets out a ten year vision that every party in the Dáil has for a health service, and the big structural changes to kind of slim down the HSE and to have a lot more autonomy - a lot more decision making at local level."
+			</p>
+			
+			
+		</div>
+				
+
+

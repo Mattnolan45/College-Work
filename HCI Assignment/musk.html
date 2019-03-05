@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Daily Mail Now</title>
+    </head>
+
+	<body>
+		<header>
+			<h1><a href="index.html">Daily Mail</a><span id="header"></span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html" >Home</a></li>
+					<li><a href="sport.html"class="current">Sports</a></li>
+					<li><a href="politic.html">Politics</a></li>
+					<li><a href="science.html">Science</a></li>
+					<li><a href="enter.html">Entertainment</a></li>
+				</ul>
+			</nav>
+			<div class="dtime">
+			
+			<h3 id="today"></h3>
+
+			<script>
+
+				var time = new Date();
+				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				document.getElementById("today").innerHTML = days[time.getDay()]+"  "+time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear();
+
+			</script>
+
+		</div>
+		</header>
+
+
+
+		<div>
+			<center>
+			<h1 class = "artheading">Musk scraps plans for Los Angeles tunnel</h1>
+			</center>
+
+
+			<img src="images/musk.jpg" width="600" height="330" style = "padding: 10px;"class="centre" alt="Pogba in conversation with Mourinho"/>
+	
+			<p class = "artpara">Elon Musk has scrapped his plans to dig through an affluent section of west Los Angeles after his tunneling company reached a settlement in an environmental review lawsuit. The Boring Company “is no longer seeking the development of the Sepulveda test tunnel and instead seeks to construct an operational tunnel at Dodger Stadium”, the firm announced in a statement to NBC News on Tuesday. The tunnels are Musk’s solution to “soul-destroying traffic”, a way to make roads “go 3D”, according to the company’s website. Work began last year on a test tunnel in Hawthorne, California, across the street from the headquarters of Musk’s aerospace company, SpaceX. The first two-mile section of the Hawthorne project is scheduled to be completed next month.
+			</p> 
+			<p class = "artpara">
+			Plans for the west Los Angeles tunnel under Sepulveda Boulevard were moving along as well, until neighborhood advocates – the Sunset Coalition, the Brentwood Residents Coalition and its president, Wendy-Sue Rosen – filed a lawsuit arguing that the project required an environmental review, the Los Angeles Times reported. City officials had originally ruled that the project would not require an environmental review because it would not carry passengers, but according to the Los Angeles Times, the neighborhood groups argued that Musk planned for the Sepulveda tunnel to be just one piece of a larger underground transportation network.
+			</p>
+			
+			
+		</div>
+				
+
+

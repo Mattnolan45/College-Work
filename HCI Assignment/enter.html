@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Daily Mail Now</title>
+    </head>
+	<body>
+		<header>
+			<h1><a href="index.html">Daily Mail</a><span id="header"></span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html" >Home</a></li>
+					<li><a href="sport.html">Sports</a></li>
+					<li><a href="politic.html">Politics</a></li>
+					<li><a href="science.html">Science</a></li>
+					<li><a href="enter.html" class = "current" > Entertainment</a></li>
+				</ul>
+			</nav>
+
+			<div class="dtime">
+			
+			<h3 id="today"></h3>
+
+			<script>
+
+				var time = new Date();
+				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				document.getElementById("today").innerHTML = days[time.getDay()]+"  "+time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear();
+
+			</script>
+
+		</div>
+
+		</header>
+
+
+		<div id="secwrapper">
+		<center>
+		<a href="index.html"><img src="images/logo.jpg"  width="380" height="150" alt="daily mail logo"/></a>
+		</center>
+			<h1 style="text-align:center;padding-bottom: 5px;">Entertainment News</h1>
+			<div id="sponsors">
+				<h1>Sponsors</h1>
+					<a href="#"><p>Advertise here</p></a><a href="#"><p>Advertise here</p></a><a href="#"><p>Advertise here</p></a>
+			</div>
+			<div id="photobox">
+					<h1 style="padding-right: 10px; text-align: center;">Photos Box</h1>
+					<img src="images/a.jpg" width="80" height="80" alt="" /><img src="images/b.jpg" width="80" height="80" alt="" /><img src="images/c.jpg" width="80" height="80" alt="" />
+
+					
+			</div>
+			
+			<section>
+
+				<article id="featured">
+					<a href="#"><img src="images/celeb.jpg" width="280" height="150" alt="I'm a Celebrity logo"/></a>
+					<img src="images/featured.png" width="20" height="10" alt="" id="featuredico"/>
+					<h1>I’m A Celebrity launch episode breaks ratings record</h1>
+					<p>The first episode of the new series of I’m A Celebrity… Get Me Out Of Here! – starring new presenter Holly Willoughby – has become the most-watched launch episode in the show’s history. ITV said the episode has been watched by 13.7 million viewers over the past seven days, according to consolidated data. The overall number has grown from the original overnight ratings, which showed that 11 million people tuned in for the first episode.</p>
+					<a href="celeb.html" class="readmore">Read more</a>
+				</article>
+				<article>
+					<a href="#"><img src="images/netflix.jpg" width="280" height="150" alt="Netflix logo" /></a>
+					<h1>The best Netflix original movies of 2018</h1>
+					<p>
+					Been So Long, Based on the musical of the same name, Tinge Krishnan’s Been So Long is a modern day romance that follows a single mother who falls in love with a handsome stranger during a rare night out on the town with friends. Featuring a dazzling performance from Michaela Coel (Chewing Gum, Black Mirror), the actress received a Most Promising Newcomer nomination at the British Independent Film Awards.
+					</p>
+					<a href="movie.html" class="readmore">Read more</a>
+				</article>
+
+				<article id="featured">
+					<a href="#"><img src="images/james.jpg" width="280" height="150" alt="James Corden"/></a>
+					<img src="images/featured.png" width="20" height="10" alt="" id="featuredico"/>
+					<h1>James Corden in hot water.</h1>
+					<p>In an attempt to get a jump start on the Christmas season, James welcomes Santa Claus to help decorate and spread Christmas cheer throughout Studio 56. But when Santa only delivers a mug, James calls out Santa, who is happy to enlighten James about the perils of being Santa Claus at Christmas. This soon backfires on him and causes a lot of outrage for his Amercican based fans in his audience</p>
+					<a href="celeb.html" class="readmore">Read more</a>
+				</article>
+				
+
+			</section>
+
+		</div>
+				
+
+		<footer>
+			<a href="#">Contact us</a>
+		</footer>
+	</body>
+</html>

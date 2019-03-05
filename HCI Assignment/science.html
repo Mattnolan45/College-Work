@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Daily Mail Now</title>
+    </head>
+	<body>
+		<header>
+			<h1><a href="index.html">Daily Mail</a><span id="header"></span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="sport.html">Sports</a></li>
+					<li><a href="politic.html">Politics</a></li>
+					<li><a href="science.html" class="current">Science</a></li>
+					<li><a href="enter.html">Entertainment</a></li>
+				</ul>
+			</nav>
+
+			<div class="dtime">
+			
+			<h3 id="today"></h3>
+
+			<script>
+
+				var time = new Date();
+				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+				document.getElementById("today").innerHTML = days[time.getDay()]+"  "+time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear();
+
+			</script>
+
+		</div>
+
+		</header>
+
+
+		<div id="secwrapper">
+		<center>
+		<a href="index.html"><img src="images/logo.jpg"  width="380" height="150" alt="daily mail logo"/></a>
+		</center>
+			<h1 style="text-align:center;padding-bottom: 5px;">Science News</h1>
+			<div id="sponsors">
+				<h1>Sponsors</h1>
+					<a href="#"><p>Advertise here</p></a><a href="#"><p>Advertise here</p></a><a href="#"><p>Advertise here</p></a>
+			</div>
+			
+			<div id="photobox">
+					<h1 style="text-align: center;">Photos Box</h1>
+					<img src="images/a.jpg" width="80" height="80" alt="" /><img src="images/b.jpg" width="80" height="80" alt="" /><img src="images/c.jpg" width="80" height="80" alt="" />
+					<img src="images/d.jpg" width="80" height="80" alt="" /><img src="images/e.jpg" width="80" height="80" alt="" /><img src="images/f.jpg" width="80" height="80" alt="" />
+					
+			</div>
+			
+			<section>
+
+				<article id="featured">
+					<a href="#"><img src="images/musk.jpg" width="280" height="150" alt="elon musk at press conference"/></a>
+					<img src="images/featured.png" width="20" height="10" alt="" id="featuredico"/>
+					<h1>Musk scraps plans for Los Angeles</h1>
+					<p>Elon Musk has scrapped his plans to dig through an affluent section of west Los Angeles after his tunneling company reached a settlement in an environmental review lawsuit. The Boring Company “is no longer seeking the development of the Sepulveda for now".</p>
+					<a href="musk.html" class="readmore">Read more</a>
+				</article>
+				<article>
+					<a href="#"><img src="images/vol.jpg" width="280" height="150" alt="volcano erupting" /></a>
+					<h1>Intelligence helps predict volcanic</h1>
+					<p> Satellites are providing torrents of data about the world’s active volcanoes, but researchers have struggled to turn them into a global prediction of volcanic risks. That may soon change with newly developed algorithms that can automatically tease from that data signals of volcanic risk.</p>
+					<a href="volcano.html" class="readmore">Read more</a>
+				</article>
+				<article class="rightcl">
+					<a href="#"><img src="images/moon.jpg" width="280" height="150" alt="moon at night" /></a>
+					<h1>China sets out for the moon</h1>
+					<p>China's ambitious program of lunar exploration is about to attempt a spacefaring first: On 8 December it will launch a probe intended to land on the far side of the moon. Besides boasting rights, the Chang'e-4 lander and rover are expected to produce a host of new insights into the moon's composition and history.</p>
+					<a href="china.html" class="readmore">Read more</a>
+				</article>			
+	
+				<article>
+					<a href="#"><img src="images/nucleur.jpg" width="280" height="150" alt="nucleur reactor"/></a>
+					<h1>Russian nucleur plant explodes</h1>
+					<p>This afternoon 56 kilometres outside of Moscow a Nucleur Reactor began to malfunction causing a sequence of events leading to a small explosion which was quickly handled by the experts nearby. More to follow </p>
+					<a href="#" class="readmore">Read more</a>
+				</article>
+
+				<article>
+					<a href="#"><img src="images/head.jpg" width="280" height="150" alt="first patient to undergo surgery"/></a>
+					<h1>First human head transplant succesful</h1>
+					<p>Today in the city of Chicago the worlds first head transplant was executed with a team of experts. In total the surgery took 22 hours of constant care and perfect timing. The patient is currently in intensive care but looks to make full recovery soon.</p>
+					<a href="#" class="readmore">Read more</a>
+				</article>
+
+
+
+				<article class="rightcl">
+					<a href="#"><img src="images/india.jpg" width="280" height="150"alt=""/></a>
+					<h1>Tensions rise in world science</h1>
+					<p>Vulputate ac sit aenean quis dignissim diam. Etiam venenatis congue velit, varius gravida mi volutpat ac. Sed ut pretium dolor. Etiam tempor felis ac eros dictum quis consectetur dolor tristique. Aliquam scelerisque, odio vel luctus commodo, nisl nisl vehicula metus, ut lobortis eros sem blandit est.</p>
+					<a href="#" class="readmore">Read more</a>
+				</article>
+				
+			</section>
+
+		</div>
+				
+
+		<footer>
+			<a href="#">Contact us</a>
+		</footer>
+	</body>
+</html>
