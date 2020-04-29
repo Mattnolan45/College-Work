@@ -1,0 +1,366 @@
+/*******************************
+***** SECTION 1 - OPTIONS *****
+*******************************/
+
+options { 
+    IGNORE_CASE = true;
+    DEBUG_TOKEN_MANAGER = false;
+    VISITOR = true;
+    MULTI = true;
+    NODE_DEFAULT_VOID = true;
+}
+
+/*********************************
+***** SECTION 2 - USER CODE *****
+*********************************/
+PARSER_BEGIN(CCALTokeniser)
+
+import java.io.*;
+import java.util.*;
+
+public class CCALTokeniser 
+{
+
+		public static String scope = "global";
+  		public static SymbolTable symbolTable = new SymbolTable();
+
+
+	public static void main(String args[]) 
+	{
+
+
+		CCALTokeniser tokeniser;
+		if (args.length == 0) 
+		{
+			System.out.println("Reading from standard input . . .");
+			tokeniser = new CCALTokeniser(System.in);
+		} 
+		else if (args.length == 1) 
+		{
+			try 
+			{
+				tokeniser = new CCALTokeniser(new java.io.FileInputStream(args[0]));
+			} 
+			catch (java.io.FileNotFoundException e) 
+			{
+				System.err.println("File " + args[0] + " not found.");
+				return;
+			}
+		}
+		else 
+		{
+			System.out.println("SLP Tokeniser: Usage is one of:");
+			System.out.println(" java CCALTokeniser < inputfile");
+			System.out.println("OR");
+			System.out.println(" java CCALTokeniser inputfile");
+			return;
+		}
+
+
+
+		try {
+
+			SimpleNode root = tokeniser.program();
+        	System.out.println("Abstract Syntax Tree:");
+        	root.dump("");
+
+        	System.out.println("SymbolTable:");
+        	symbolTable.PrintTable();
+
+        	System.out.println("\nSemantic Checks");
+        	SemanticCheckVisitor scv = new SemanticCheckVisitor();
+        	root.jjtAccept(scv, symbolTable);
+
+        } catch (ParseException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Parse failure");
+        }
+
+
+	}
+}
+PARSER_END(CCALTokeniser)
+	
+
+/*********************************
+***** SECTION 3 - TOKEN DEF  *****
+*********************************/
+
+TOKEN_MGR_DECLS :
+{
+static int commentNesting = 0;
+}
+
+SKIP : /*** Ignoring spaces/tabs/newlines ***/
+{
+	" "
+	| "\t"
+	| "\n"
+	| "\r"
+	| "\f"
+}
+
+SKIP : 
+{
+	<"//" (~["\n"])* "\n">
+}
+
+SKIP : {
+	"/*" { commentNesting++; } : IN_COMMENT
+}
+
+<IN_COMMENT> SKIP : {
+	"/*" { commentNesting++;}
+	| "*/" { commentNesting--;
+			if (commentNesting == 0)
+				SwitchTo(DEFAULT);
+	}
+	|<~[]>
+}
+
+
+TOKEN : /* reserved words */
+{
+	 < VARIABLE : "var">
+	|< CONSTANT : "const">
+	|< RETURN 	: "return">
+	|< INTEGER  : "integer">
+	|< BOOLEAN  : "boolean">
+	|< VOID 	: "void"> 
+	|< MAIN 	: "main">
+	|< IF 		: "if">
+	|< ELSE  	: "else">
+	|< TRUE 	: "true">
+	|< FALSE 	: "false">
+	|< WHILE  	: "while">
+	|< SKIPTOKEN: "skip">
+}
+
+
+TOKEN : /*tokens in the language*/
+{
+	 < COMMA 	 : ",">
+	|< SEMICOLON : ";">
+	|< COLON 	 : ":">
+	|< ASSIGNMENT: "=">
+	|< LBRACE	 : "{">
+	|< RBRACE 	 : "}">
+	|< LBRACKET  : "(">
+	|< RBRACKET  : ")">
+	|< PLUS 	 : "+">
+	|< MINUS     : "-">	
+	|< TILDE     : "~">
+	|< OR 		 : "||">
+	|< AND 		 : "&&">
+	|< EQUALS    : "==">
+	|< NOTEQUALS : "!=">
+	|< LT  		 : "<">
+	|< LE 		 : "<=">
+	|< GT        : ">">
+	|< GE        : ">=">
+	
+}
+
+TOKEN : /* VALUES */
+{
+     <NUM : "0" | ((<MINUS>)? ["1" - "9"] (<DIGIT>)*) >
+	|<#DIGIT: ["0"-"9"] >
+	|<ID : <LETTER> (<LETTER> | <DIGIT> | "_")* >
+	|<#LETTER: ["A"-"Z", "a"-"z"] >
+}
+
+TOKEN: /* Anything not recognised so far */
+{
+	< OTHER : ~[] >
+}
+
+
+/***********************************
+***** SECTION 4 - THE GRAMMAR *****
+***********************************/
+
+
+SimpleNode program() #Program : {}
+{
+	decl_list() function_list() main() <EOF> { return jjtThis; }
+}
+
+void decl_list() : {}
+{
+	(decl() <SEMICOLON> decl_list() )?
+}
+
+void decl() : {}
+{
+	var_decl()
+  | const_decl()
+}
+
+void var_decl() #Var : { Token t; String id; String type;}
+{
+	t = <VARIABLE> id = id() <COLON> type = type() { jjtThis.value = t.image; symbolTable.addToTable(id,"Var",type,scope);}
+}
+
+void const_decl() #Const : { Token t; String id; String type;}
+{
+	t = <CONSTANT> id = id() <COLON> type = type() <ASSIGNMENT> expression() { jjtThis.value = t.image; symbolTable.addToTable(id,"Const",type,scope);}
+}
+
+void function_list() : {}
+{
+	(function() function_list())?
+}
+
+void function() #Function : {Token t; String id; String type;}
+{
+	type = type() id = id() {symbolTable.addToTable(id,"Function",type,scope); scope = id;} <LBRACKET> parameter_list() <RBRACKET> 
+	<LBRACE>
+	decl_list()
+	statement_block()
+	<RETURN> <LBRACKET> returnFunc() <RBRACKET> <SEMICOLON>
+	<RBRACE> {scope = "global";}
+}
+
+void returnFunc() #Return : {}
+{
+	( expression() )? 
+}
+
+
+
+String type() #Type : {Token t;}
+{
+	t = <INTEGER> {jjtThis.value = t.image; return t.image;}
+	| t = <BOOLEAN> {jjtThis.value = t.image; return t.image;}
+	| t = <VOID> {jjtThis.value = t.image; return t.image;}
+}
+
+void parameter_list() #Param_list : {}
+{
+	(nemp_parameter_list())?
+}
+
+void nemp_parameter_list() #Parameters : {Token t; String type; String id;}
+{
+	id = id() <COLON> type = type() (<COMMA> nemp_parameter_list())? {symbolTable.addToTable(id,"Parameters",type,scope);}
+}
+
+void main() #Main : {}
+{	
+	{scope = "main";}
+	<MAIN> <LBRACE>	
+	decl_list()
+	statement_block()
+	<RBRACE>
+}
+
+void statement_block() : {}
+{
+	(statement() statement_block())?
+}
+
+void statement() #Statement : {Token t;}
+{
+	 id() (t = <ASSIGNMENT> expression() <SEMICOLON> {jjtThis.value = t.image;} # Assign(2)  | (function_call())? <SEMICOLON> )
+	|<LBRACE> statement_block() <RBRACE>
+	|t = <IF> condition() <LBRACE> statement_block() <RBRACE> <ELSE> <LBRACE> statement_block() <RBRACE> {jjtThis.value = t.image;}
+	|t = <WHILE> condition() <LBRACE> statement_block() <RBRACE> {jjtThis.value = t.image;}
+	|<SKIPTOKEN> <SEMICOLON>
+}
+
+void function_call() : {Token t;}
+{
+	<LBRACKET> arg_list() <RBRACKET> #FunctionCall(1)
+}
+
+
+void expression()  : {}
+{
+	choice_expression() expression_arith() 
+}
+
+void choice_expression() : {}
+{
+	
+	(<MINUS>)? id() (LOOKAHEAD(1) function_call())? 
+	|number() 
+	|<TRUE> 
+	|<FALSE>
+	|<LBRACKET> expression() <RBRACKET>	
+}
+
+void expression_arith() : {}
+{
+	binary_arith_op() expression() 
+	|{}
+}
+
+void fragment() : {}
+{
+	expression()	
+}
+
+void binary_arith_op() : { Token t;} 
+{
+	 t = <PLUS> {jjtThis.value = t.image; } # Plus(2)
+	|t = <MINUS> {jjtThis.value = t.image;} # Minus(2)
+}
+
+
+
+void condition() : {}
+{
+	choice_condition() condition_simple()
+}
+
+void choice_condition() : {Token t;}
+{
+	t = <AND> condition() {jjtThis.value = t.image;} # And(2)
+	|t = <OR> condition() {jjtThis.value = t.image;} # Or(2)
+	|{}
+}
+
+void condition_simple() : {}
+{
+     <TILDE> condition()
+	|LOOKAHEAD(1) <LBRACKET>  condition() <RBRACKET>
+	|expression() comp_op() expression()
+}
+
+void  comp_op() #Comp : {Token t;} 
+{
+	  t = <EQUALS> {jjtThis.value = t.image;} # equals
+	| t = <NOTEQUALS> {jjtThis.value = t.image;} # notEquals
+	| t = <LT> {jjtThis.value = t.image;} # LT(2) 
+	| t = <LE> {jjtThis.value = t.image;} # LE(2)
+	| t = <GT> {jjtThis.value = t.image;} # GT(2)
+	| t = <GE> {jjtThis.value = t.image;} # GE(2)
+}
+
+void arg_list() : {}
+{
+	(nemp_arg_list())?
+}
+
+void nemp_arg_list() : {}
+{
+	<ID> (<COMMA> nemp_arg_list())?
+}
+
+String id() #ID : {Token t;}
+{
+  t = <ID> {jjtThis.value = t.image; return t.image; } 
+}
+
+void number() #Number: {Token t;}
+{
+  t = <NUM> {jjtThis.value = t.image;} 
+}
+
+void bool() #Bool: {Token t;}
+{
+  t = <TRUE> { jjtThis.value = t.image; }
+| t = <FALSE> { jjtThis.value = t.image; }
+
+}
+
