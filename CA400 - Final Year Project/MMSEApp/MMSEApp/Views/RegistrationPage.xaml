@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MMSEApp.Views.RegistrationPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Spacing="60" Margin="16" Padding="35">
+
+
+            <Label Text="Registration page"  
+            HorizontalTextAlignment="Center"			
+			TextColor="#127ac7"
+			FontSize="30" 
+			FontAttributes="Bold"  
+			HorizontalOptions="CenterAndExpand"/>
+
+            <StackLayout Spacing="20">
+                <Entry Placeholder="Enter First Name" Text="{ Binding FirstName}"/>
+                <Entry Placeholder="Enter Last Name" Text="{Binding LastName}"/>
+
+                <Entry Placeholder="Enter Username" Text="{ Binding Username }" AutomationId="RP_Username"/>
+                <Entry Placeholder="Enter Password" IsPassword="True" Text="{ Binding Password }" AutomationId="RP_Password"/>
+                <Entry Placeholder="Confirm Password" IsPassword="True" Text="{ Binding ConfirmPassword }" AutomationId="RP_Password_Con"/>
+                
+                <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="Fill">
+                    <Button Text="Submit" Command="{ Binding RegisterCommand }" Style="{StaticResource blueButtonStyle}" AutomationId="RP_Submit"/>
+                    <Button Text="Back" Clicked="Button_Clicked" Style="{StaticResource blueButtonStyle}" AutomationId="RP_Back"/>
+                </StackLayout>
+                
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

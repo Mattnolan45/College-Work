@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             mc:Ignorable="d"
+             x:Class="MMSEApp.Views.DrawingQuestion">
+
+    <StackLayout HorizontalOptions="FillAndExpand">
+        <Grid HeightRequest="800">
+            <skia:SKCanvasView  PaintSurface="OnPainting"
+                        EnableTouchEvents="True" 
+                        Touch="OnTouch"/>
+
+        </Grid>
+        
+        <StackLayout Spacing="20" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Back" Clicked="Back_Clicked" Style="{StaticResource blueButtonStyle}"/>
+            <Button Text="Finish Exam" Clicked="Finish_Clicked" Style="{StaticResource blueButtonStyle}"/>
+        </StackLayout>
+        
+    </StackLayout>
+
+
+</ContentPage>

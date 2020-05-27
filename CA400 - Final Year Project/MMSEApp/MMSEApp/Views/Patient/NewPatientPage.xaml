@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MMSEApp.Views.NewPatient">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content >
+        <StackLayout VerticalOptions="Center" Spacing="20">
+
+            <!--Title-->
+            <Label HorizontalTextAlignment="Center"			
+            Text="Add new Patient"
+			TextColor="#127ac7"
+			FontSize="30" 
+			FontAttributes="Bold"  
+			HorizontalOptions="CenterAndExpand" />
+
+            <Entry Placeholder="First Name" Text="{Binding Firstname}" AutomationId="NP_FName_Entry"/>
+            <Entry Placeholder="Last Name" Text="{Binding Lastname}" AutomationId="NP_LName_Entry"/>
+            <StackLayout >
+                <Label Text="Date of Birth"/>
+                <DatePicker x:Name="DatePicker"  DateSelected="DatePicker_DateSelected" AutomationId="NP_Date Picker"/>
+            </StackLayout>
+            
+
+
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Button Text="Save Patient" Command="{ Binding AddPatient } " Style="{StaticResource blueButtonStyle}" AutomationId="NP_Save"/>
+                <Button Text="Cancel" Clicked="Cancel_Button_Clicked" Style="{StaticResource blueButtonStyle}" AutomationId="NP_Cancel"/>
+            </StackLayout>
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             mc:Ignorable="d"
+             x:Class="MMSEApp.Views.HomePage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+            <!--Style for buttons on this page-->
+            <StackLayout.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                    <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                    <Setter Property="BackgroundColor" Value="#1976D2" />
+                    <Setter Property="TextColor" Value="White" />
+                    <Setter Property="BackgroundColor" Value="#1dabf0" />
+                    <Setter Property="CornerRadius" Value="10" />
+                    <Setter Property="WidthRequest" Value="140" />
+                    <Setter Property="HeightRequest" Value="120" />
+                </Style>
+            </StackLayout.Resources>
+            
+            <Label HorizontalTextAlignment="Center"			
+            Text="Mini-Mental State Examination"
+			TextColor="#127ac7"
+			FontSize="30" 
+			FontAttributes="Bold"/>
+            
+            
+            <StackLayout HorizontalOptions="Center" Margin="15" x:Name="DocInfo" BindingContext="currentDoc" Orientation="Horizontal">
+                <Label Text="Welcome " FontSize="20" />
+                <Label x:Name="DocName" FontSize="20" />    
+            </StackLayout>
+
+            
+            <StackLayout Spacing="10" Orientation="Horizontal" VerticalOptions="Center">
+                <Button Text="Patients Page" Clicked="Patients_Clicked"/>
+                <Button Text="Exams Home Page" Clicked="Exams_Clicked"/>
+            </StackLayout>
+                
+            <StackLayout >
+                <Label HorizontalOptions="Center" Text="Average Exam score by Age group"/>
+                <forms:ChartView  x:Name="MyLineChart" HeightRequest="400"/>
+            </StackLayout>
+                
+            
+            
+
+
+            <!--<Grid RowSpacing="30" ColumnSpacing="20" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Button Grid.Row="0" Grid.Column="0" Text="Doctor profile"/>
+
+                <Button Grid.Row="0" Grid.Column="1" Text="Patients"/>
+
+                <Button Grid.Row="1" Grid.Column="0" Text="Exams"/>
+
+                <Button Grid.Row="1" Grid.Column="1" Text="Calendar"/>
+                
+            </Grid>-->
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

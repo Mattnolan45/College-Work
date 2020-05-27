@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MMSEApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="MMSEApp.Views.LoginPage"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        
+        <StackLayout VerticalOptions="Center"  Spacing="20">
+    
+                
+             <!--Title-->
+            <Label HorizontalTextAlignment="Center"			
+            Text="Mini-Mental State Examination"
+			TextColor="#127ac7"
+			FontSize="30" 
+			FontAttributes="Bold"  
+			HorizontalOptions="CenterAndExpand" />
+            
+            <!--Logo-->
+            <Image x:Name="Logo"/>
+
+            <Grid Margin="16" Padding="35" RowSpacing="20" >
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                
+                <StackLayout Grid.Row="1">
+                    <!--Username-->
+                    <Entry x:Name="UserNameVar" Grid.Row="0" Placeholder="Username" Text="{ Binding Username }" AutomationId="LP_Username"/>
+
+                    <!--Password-->
+                    <Entry  x:Name="PasswordVar" Placeholder="Password" IsPassword="True" Text="{ Binding Password }" AutomationId="LP_Password"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" HorizontalOptions="FillAndExpand" >
+                    <!--LoginButton-->
+                    <Button                    
+			        Text="Login" 
+                    Command="{Binding LoginCommand }"
+                    Style="{StaticResource blueButtonStyle}"
+                        AutomationId="LP_Login"/>
+
+                    <!--RegisterButton-->
+                    <Button
+			        Text="Register" 
+                    Clicked="Register_Button_Clicked"
+                    Style="{StaticResource blueButtonStyle}"
+                        AutomationId="LP_Register"/>
+
+
+                </StackLayout>
+
+            </Grid>
+
+           
+                
+        
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
+    
+    
+    

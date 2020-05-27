@@ -1,0 +1,4 @@
+MainPackage=C:\Users\matth\OneDrive\Documents\Source\Repos\2020-ca400-nolanm45-oharam29\src\MMSEApp\MMSEApp\MMSEApp.UWP\bin\ARM\Debug\MMSEApp.UWP_1.0.2.0_ARM_Debug.appx
+SymbolPackage=C:\Users\matth\OneDrive\Documents\Source\Repos\2020-ca400-nolanm45-oharam29\src\MMSEApp\MMSEApp\MMSEApp.UWP\obj\ARM\Debug\Symbols\MMSEApp.UWP_1.0.2.0_ARM_Debug.appxsym
+ResourcePack=C:\Users\matth\OneDrive\Documents\Source\Repos\2020-ca400-nolanm45-oharam29\src\MMSEApp\MMSEApp\MMSEApp.UWP\bin\ARM\Debug\MMSEApp.UWP_1.0.2.0_scale-100.appx
+ResourcePack=C:\Users\matth\OneDrive\Documents\Source\Repos\2020-ca400-nolanm45-oharam29\src\MMSEApp\MMSEApp\MMSEApp.UWP\bin\ARM\Debug\MMSEApp.UWP_1.0.2.0_scale-400.appx
